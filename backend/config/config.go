@@ -57,11 +57,12 @@ func Getconfig() AppConfig {
 		if err != nil {
 			panic(err)
 		}
-	} else if env == "production" {
+	} else if env == "prod" {
 		err := json.Unmarshal([]byte(configprod.ConfigApp), &appConfig)
 		if err != nil {
 			panic(err)
 		}
+
 	}
 	appConfig.Aws.Host = os.Getenv("AWS_HOST")
 	appConfig.Aws.Port = os.Getenv("AWS_PORT")
@@ -72,7 +73,26 @@ func Getconfig() AppConfig {
 	if appConfig.Port == "" {
 		appConfig.Port = os.Getenv("PORT")
 	}
-	//MYSQL
+	if appConfig.PostgreDB.User == "" {
+		appConfig.PostgreDB.User = os.Getenv("DB_USER")
+
+	}
+	if appConfig.PostgreDB.Pass == "" {
+		appConfig.PostgreDB.Pass = os.Getenv("DB_PASSWORD")
+
+	}
+	if appConfig.PostgreDB.Host == "" {
+		appConfig.PostgreDB.Host = os.Getenv("DB_HOST")
+
+	}
+	if appConfig.PostgreDB.Port == "" {
+		appConfig.PostgreDB.Port = os.Getenv("DB_PORT")
+
+	}
+	if appConfig.PostgreDB.Db == "" {
+		appConfig.PostgreDB.Db = os.Getenv("DB_NAME")
+
+	}
 
 	return appConfig
 }

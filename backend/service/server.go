@@ -56,7 +56,7 @@ func Run() {
 	e.POST("/register", AppV1RegisterUser(api))
 	e.GET("/logout", AppV1GetLogout(api))
 	e.GET("/swageer/*", echoSwagger.WrapHandler)
-	e.Static("/*", "../web")
+	e.Static("/*", "./web")
 	fmt.Println("" + config.Getconfig().Port)
 	// e.Logger.SetOutput(io.Discard)
 	e.Logger.Fatal(e.Start(":" + config.Getconfig().Port))

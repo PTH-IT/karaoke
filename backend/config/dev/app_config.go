@@ -2,7 +2,7 @@ package config
 
 const ConfigApp = `{
 	"env":"dev",
-	"port":"1909",
+	"port":"80",
 	"mysql":{
 		"host":"",
         "port":"",

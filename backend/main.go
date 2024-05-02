@@ -13,10 +13,10 @@ import (
 //	@description	This is a sample server Petstore server.
 //	@termsOfService	http://swagger.io/terms/
 
-//	@contact.name	API Support
-//	@contact.url	http://www.swagger.io/support
-//	@contact.email	haupham404
-//	@host			localhost:1909
+// @contact.name	API Support
+// @contact.url	http://www.swagger.io/support
+// @contact.email	haupham404@gmail.com
+// @host			localhost:1909
 func main() {
 	InforLog.PrintLog(fmt.Sprintf("af.Run call"))
 	// fmt.Println(utils.GetscretManager("test"))

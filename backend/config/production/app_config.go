@@ -10,12 +10,6 @@ const ConfigApp = `{
         "password":"",
         "db":""
 	},
-	"monggodb":{
-		"host":"",
-        "user":"",
-        "password":"",
-        "db":""
-	},
 	"redis":{
         "host":"",
 		"port":"",

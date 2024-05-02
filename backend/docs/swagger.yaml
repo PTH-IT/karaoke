@@ -22,7 +22,7 @@ definitions:
       type:
         type: string
     type: object
-host: localhost:1909
+host: localhost:80
 info:
   contact:
     email: haupham404
