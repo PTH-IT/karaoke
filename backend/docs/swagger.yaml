@@ -1,0 +1,166 @@
+definitions:
+  model.Login:
+    properties:
+      Password:
+        type: string
+      UserID:
+        type: string
+    type: object
+  model.RegisterUser:
+    properties:
+      Password:
+        type: string
+      UserID:
+        type: string
+      email:
+        type: string
+    type: object
+  model.Token:
+    properties:
+      Authorization:
+        type: string
+      type:
+        type: string
+    type: object
+host: localhost:1909
+info:
+  contact:
+    email: haupham404
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /adduser:
+    post:
+      consumes:
+      - application/json
+      description: Add new user to database
+      parameters:
+      - default: application/json
+        description: application/json
+        in: header
+        name: Content-Type
+        required: true
+        type: string
+      - default: "1000"
+        description: "1000"
+        in: header
+        name: Content-Length
+        required: true
+        type: string
+      - default: localhost
+        description: localhost
+        in: header
+        name: Host
+        required: true
+        type: string
+      - description: model.RegisterUser
+        in: body
+        name: token
+        required: true
+        schema:
+          $ref: '#/definitions/model.RegisterUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: AddUser
+      tags:
+      - User
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: login username
+      parameters:
+      - default: application/json
+        description: application/json
+        in: header
+        name: Content-Type
+        required: true
+        type: string
+      - default: "1000"
+        description: "1000"
+        in: header
+        name: Content-Length
+        required: true
+        type: string
+      - default: localhost
+        description: localhost
+        in: header
+        name: Host
+        required: true
+        type: string
+      - description: model.Login
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/model.Login'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Token'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: LoginUser
+      tags:
+      - User
+  /logout:
+    get:
+      consumes:
+      - application/json
+      description: GetLogout
+      parameters:
+      - default: application/json
+        description: application/json
+        in: header
+        name: Content-Type
+        required: true
+        type: string
+      - default: "1000"
+        description: "1000"
+        in: header
+        name: Content-Length
+        required: true
+        type: string
+      - default: localhost
+        description: localhost
+        in: header
+        name: Host
+        required: true
+        type: string
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema: {}
+      summary: GetLogout
+      tags:
+      - User
+swagger: "2.0"
