@@ -12,7 +12,7 @@ services:
   web:
     build: .
     ports:
-      - "80:80"
+      - "1909:1909"
     volumes:
       - ".:/app"
     # depends_on:
