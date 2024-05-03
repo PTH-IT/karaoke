@@ -76,4 +76,4 @@ jobs:
         npm run build --if-present
         cd ..
         cd backend 
-        docker compose up
+        docker compose up --detach
