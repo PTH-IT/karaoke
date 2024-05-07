@@ -26,6 +26,12 @@ docker pull postgres
 
 docker run --name some-postgres -e POSTGRES_PASSWORD=123 -d -p 5432:5432 postgres 
 
+3. install redis
+
+docker pull redis
+
+docker run --name some-redis  -d -p 6379:6379 redis 
+
 1. backend
    
 FrameWork: echo
