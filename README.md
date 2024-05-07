@@ -1,6 +1,6 @@
 A.create enveroment
 
-1.install docker on ec2
+1. install docker on ec2
 
 install sudo apt update
 
@@ -20,7 +20,7 @@ sudo apt install docker-ce
 
 sudo systemctl status docker
 
-2.install postgres on docker
+2. install postgres on docker
 
 docker pull postgres
 
