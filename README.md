@@ -30,7 +30,7 @@ docker run --name some-postgres -e POSTGRES_PASSWORD=123 -d -p 5432:5432 postgre
 
 docker pull redis
 
-docker run --name some-redis  -d -p 6379:6379 redis 
+docker run --name some-redis  -d -p 6379:6379 -e REDIS_PASSWORD=mypas  redis sh -c 'exec redis-server --requirepass "$REDIS_PASSWORD"'
 
 1. backend
    
