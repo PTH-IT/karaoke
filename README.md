@@ -1,3 +1,5 @@
+link frontend: http://3.111.40.131:1909/
+link swagger: http://3.111.40.131:1909/swageer/
 A.create enveroment
 
 1. install docker on ec2
