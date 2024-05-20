@@ -3,6 +3,15 @@ on:
   push:
     branches:
       - "production"
+    paths:
+      - "backend/**"
+      - "frontend/**"
+  pull_request:
+    branches:
+      - "production"
+    paths:
+      - "backend/**"
+      - "frontend/**"
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
